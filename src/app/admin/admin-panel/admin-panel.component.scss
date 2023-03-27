@@ -1,0 +1,16 @@
+.nav-link {
+
+    i {
+        display: none;
+    }
+
+    &.active {
+        small {
+            color: rgb(209, 118, 43);
+        }
+        
+        i {
+            display: inline;
+        }
+    }
+}

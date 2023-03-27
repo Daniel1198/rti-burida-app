@@ -1,0 +1,254 @@
+<div class="px-3 py-1 bg--blue shadow d-flex justify-content-between align-items-center">
+    <div class="d-flex align-items-center">
+        <img src="favicon.ico" alt="Logo" width="40">
+        <small class="text-white fw-bold ms-2 text-uppercase">Burida :: Suivi Des Emissions</small>
+    </div>
+    <div>
+        <button class="btn btn-sm btn-danger border-0" (click)="onLogout()">
+            <small>SE DECONNECTER </small>
+            <i class="fa fa-power-off"></i>
+        </button>
+    </div>
+</div>
+
+<div class="w3-animate-bottom">
+    <div class="p-3 bg-light row">
+        <div class="form-group col-2">
+            <label class="form-label fw-bold"><small>Date de début</small></label>
+            <input type="date" class="form-control-sm form-control">
+        </div>
+        <div class="form-group col-2">
+            <label class="form-label fw-bold"><small>Date de fin</small></label>
+            <input type="date" class="form-control-sm form-control">
+        </div>
+        <div class="form-group col-3">
+            <label class="form-label fw-bold"><small>Support</small></label>
+            <select class="form-select form-select-sm">
+                <option value="">-- Choisir le support --</option>
+            </select>
+        </div>
+        <div class="form-group col-3 border-end">
+            <label class="form-label fw-bold"><small>Période prédéfinie</small></label>
+            <select class="form-select form-select-sm">
+                <option value="">-- Choisir la période --</option>
+            </select>
+        </div>
+        <div class="col-2">
+            <button class="btn btn-sm btn-warning w-100 shadow-sm">
+                <i class="fa fa-print me-2"></i>
+                <small>Imprimer</small>
+            </button>
+            <button class="btn btn-sm btn-success d-block w-100 mt-1 shadow-sm">
+                <i class="fa fa-file-export me-2"></i>
+                <small>Exporter</small>
+            </button>
+        </div>
+    </div>
+    <div class="p-3 mt-3 bg-light">
+        <nav>
+            <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                <button class="nav-link active" id="nav-conducteur-tab" data-bs-toggle="tab" data-bs-target="#nav-conducteur" type="button" role="tab">
+                    <small class="fw-bold txt--blue">
+                        <i class="fa fa-check"></i>
+                        CONDUCTEURS
+                    </small>
+                </button>
+                <button class="nav-link" id="nav-artiste-tab" data-bs-toggle="tab" data-bs-target="#nav-artiste" type="button" role="tab">
+                    <small class="fw-bold txt--blue">
+                        <i class="fa fa-check"></i>
+                        ARTISTES
+                    </small>
+                </button>
+                <button class="nav-link" id="nav-volEmission-tab" data-bs-toggle="tab" data-bs-target="#nav-volEmission" type="button" role="tab">
+                    <small class="fw-bold txt--blue">
+                        <i class="fa fa-check"></i>
+                        VOLUMETRIE EMISSIONS
+                    </small>
+                </button>
+                <button class="nav-link" id="nav-volArtiste-tab" data-bs-toggle="tab" data-bs-target="#nav-volArtiste" type="button" role="tab">
+                    <small class="fw-bold txt--blue">
+                        <i class="fa fa-check"></i>
+                        VOLUMETRIE ARTISTES
+                    </small>
+                </button>
+            </div>
+        </nav>
+        <div class="tab-content" id="nav-tabContent">
+            <div class="tab-pane fade show active p-3 border rounded mt-2 bg-white" id="nav-conducteur" role="tabpanel">
+                <div class="row">
+                    <div class="col-12 mb-3">
+                        <small class="txt--blue">
+                            <i class="fa fa-filter"></i>
+                            FILTRE
+                        </small>
+                    </div>
+                    <div class="form-group col-3">
+                        <input type="text" class="form-control form-control-sm" list="genre" placeholder="-- Choisir un genre --">
+                        <datalist id="genre">
+                            <option value="DIVERTISSEMENT">DIVERTISSEMENT</option>
+                        </datalist>
+                    </div>
+                    <div class="form-group col-3">
+                        <input type="text" class="form-control form-control-sm" list="emission" placeholder="-- Choisir une émission --">
+                        <datalist id="emission">
+                            <option value="PAD">PAD</option>
+                        </datalist>
+                    </div>
+                    <div class="form-group col-3">
+                        <input type="text" class="form-control form-control-sm" list="diffusion" placeholder="-- Choisir une diffusion --">
+                        <datalist id="diffusion">
+                            <option value="REDIFFUSION">REDIFFUSION</option>
+                        </datalist>
+                    </div>
+                    <div class="mt-3">
+                        <table class="shadow">
+                            <thead>
+                                <tr>
+                                    <td><small>DATE</small></td>
+                                    <td><small>HEURE DEBUT</small></td>
+                                    <td><small>HEURE FIN</small></td>
+                                    <td><small>DUREE</small></td>
+                                    <td><small>GENRE</small></td>
+                                    <td><small>EMISSION</small></td>
+                                    <td><small>DETAILS</small></td>
+                                    <td><small>EPISODE</small></td>
+                                    <td><small>DIFFUSION</small></td>
+                                    <td><small>CONDUCTEUR</small></td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td colspan="10" align="center">Aucune donnée trouvée.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade p-3 border rounded mt-2 bg-white" id="nav-artiste" role="tabpanel">
+                <div class="row">
+                    <div class="col-12 mb-3">
+                        <small class="txt--blue">
+                            <i class="fa fa-filter"></i>
+                            FILTRE
+                        </small>
+                    </div>
+                    <div class="form-group col-3">
+                        <input type="text" class="form-control form-control-sm" placeholder="Recherche par nom de l'artiste">
+                    </div>
+                    <div class="form-group col-3">
+                        <input type="text" class="form-control form-control-sm" list="emission" placeholder="-- Choisir une émission --">
+                        <datalist id="emission">
+                            <option value="PAD">PAD</option>
+                        </datalist>
+                    </div>
+                    <div class="mt-3">
+                        <table class="shadow">
+                            <thead>
+                                <tr>
+                                    <td><small>DATE DE PASSAGE</small></td>
+                                    <td><small>ARTISTE</small></td>
+                                    <td><small>HEURE DEBUT</small></td>
+                                    <td><small>HEURE FIN</small></td>
+                                    <td><small>DUREE</small></td>
+                                    <td><small>EMISSION</small></td>
+                                    <td><small>DETAILS</small></td>
+                                    <td><small>EPISODE</small></td>
+                                    <td><small>CONDUCTEUR</small></td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td colspan="9" align="center">Aucune donnée trouvée.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade p-3 border rounded mt-2 bg-white" id="nav-volEmission" role="tabpanel">
+                <div class="row">
+                    <div class="col-6">
+                        <div class="row">
+                            <div class="col-12 mb-3">
+                                <small class="txt--blue">
+                                    <i class="fa fa-filter"></i>
+                                    FILTRE
+                                </small>
+                            </div>
+                            <div class="form-group col-12">
+                                <input type="text" class="form-control form-control-sm" list="emission" placeholder="-- Recherche par émission --">
+                                <datalist id="emission">
+                                    <option value="PAD">PAD</option>
+                                </datalist>
+                            </div>
+                        </div>
+                        <table class="shadow mt-3">
+                            <thead>
+                                <tr>
+                                    <td><small>EMISSION</small></td>
+                                    <td><small>DUREE</small></td>
+                                    <td><small>OCCURENCE</small></td>
+                                    <td><small>POURCENTAGE (%)</small></td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td colspan="4" align="center">Aucune donnée trouvée.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="col-6">
+                        <highcharts-chart
+                            id="chart"
+                            [Highcharts] = "highcharts"
+                            [options]="chartOptions"
+                            style = "height: 400px; display: block;">
+                        </highcharts-chart>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade p-3 border rounded mt-2 bg-white" id="nav-volArtiste" role="tabpanel">
+                <div class="row">
+                    <div class="col-6">
+                        <div class="row">
+                            <div class="col-12 mb-3">
+                                <small class="txt--blue">
+                                    <i class="fa fa-filter"></i>
+                                    FILTRE
+                                </small>
+                            </div>
+                            <div class="form-group col-12">
+                                <input type="text" class="form-control form-control-sm" placeholder="-- Recherche par nom de l'artiste --">
+                            </div>
+                        </div>
+                        <table class="shadow mt-3">
+                            <thead>
+                                <tr>
+                                    <td><small>ARTISTE</small></td>
+                                    <td><small>EMISSION</small></td>
+                                    <td><small>OCCURENCE</small></td>
+                                    <td><small>POURCENTAGE (%)</small></td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td colspan="4" align="center">Aucune donnée trouvée.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="col-6">
+                        <highcharts-chart
+                            id="chart"
+                            [Highcharts] = "highcharts"
+                            [options]="chartOptions"
+                            style = "height: 400px; display: block;">
+                        </highcharts-chart>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

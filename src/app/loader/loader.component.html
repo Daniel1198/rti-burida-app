@@ -1,0 +1,9 @@
+<div *ngIf="loaderType === 'cadenas'" class="h-100 position-fixed d-flex align-items-center justify-content-center w-100 top-0 start-0" style="z-index: 1; background-color: rgba(0, 0, 0, 0.644);">
+    <span class="loader"></span>
+</div>
+
+<div *ngIf="loaderType === 'cercle'" class="h-100 position-fixed d-flex align-items-center justify-content-center w-100 top-0 start-0" style="z-index: 1; background-color: rgba(0, 0, 0, 0.644);">
+    <span class="loading2"></span>
+</div>
+
+<span class="loading" *ngIf="loaderType === 'ligne'"></span>

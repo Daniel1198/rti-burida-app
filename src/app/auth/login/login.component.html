@@ -1,0 +1,37 @@
+<div class="h-100 d-flex align-items-center justify-content-center" id="content">
+    <div class="my-card" style="width: 350px;">
+        <div class="text-center mb-3">
+            <img src="favicon.ico" alt="Logo" width="80">
+        </div>
+        <div class="my-card__body shadow rounded border w3-animate-zoom">
+            <div class="form__group">
+                <label for="" class="form__label">Nom d'utilisateur <span class="text-danger">*</span></label>
+                <div class="input-group">
+                    <span class="input-group-text" id="basic-addon1">
+                        <i class="fa fa-user"></i>
+                    </span>
+                    <input type="text" class="form-control">
+                </div>
+              </div>
+              <div class="form__group">
+                <label for="" class="form__label">Mot de passe <span class="text-danger">*</span></label>
+                <div class="input-group">
+                    <span class="input-group-text" id="basic-addon1">
+                        <i class="fa fa-lock"></i>
+                    </span>
+                    <input type="password" class="form-control">
+                    <span class="input-group-text" id="basic-addon1" style="cursor: pointer;">
+                        <i class="fa fa-eye"></i>
+                    </span>
+                </div>
+              </div>
+        </div>
+
+        <div class="my-card__footer shadow rounded border w3-animate-bottom">
+            <button class="bt bt--orange w-100 mb-3" (click)="onClick()">Connexion</button>
+            <button class="bt bt--link w-100">Mot de passe oublié ?</button>
+        </div>
+    </div>
+</div>
+
+<app-loader *ngIf="loading" loaderType="cadenas"></app-loader>
