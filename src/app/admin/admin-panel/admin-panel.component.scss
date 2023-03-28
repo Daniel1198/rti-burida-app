@@ -14,3 +14,20 @@
         }
     }
 }
+
+.detail {
+    .minus {
+        display: none;
+    }
+
+    &:has(.collapse.show) {
+        .header {
+            .plus {
+                display: none;
+            }
+            .minus  {
+                display: inline;
+            }
+        }
+    }
+}

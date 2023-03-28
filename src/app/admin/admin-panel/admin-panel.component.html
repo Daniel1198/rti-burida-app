@@ -1,7 +1,7 @@
 <div class="px-3 py-1 bg--blue shadow d-flex justify-content-between align-items-center">
     <div class="d-flex align-items-center">
         <img src="favicon.ico" alt="Logo" width="40">
-        <small class="text-white fw-bold ms-2 text-uppercase">Burida :: Suivi Des Emissions</small>
+        <small class="text-white fw-bold ms-2 text-uppercase">Suivi Des Emissions</small>
     </div>
     <div>
         <button class="btn btn-sm btn-danger border-0" (click)="onLogout()">
@@ -36,11 +36,11 @@
         <div class="col-2">
             <button class="btn btn-sm btn-warning w-100 shadow-sm">
                 <i class="fa fa-print me-2"></i>
-                <small>Imprimer</small>
+                <small>Tout Imprimer</small>
             </button>
             <button class="btn btn-sm btn-success d-block w-100 mt-1 shadow-sm">
                 <i class="fa fa-file-export me-2"></i>
-                <small>Exporter</small>
+                <small>Tout Exporter</small>
             </button>
         </div>
     </div>
@@ -51,6 +51,12 @@
                     <small class="fw-bold txt--blue">
                         <i class="fa fa-check"></i>
                         CONDUCTEURS
+                    </small>
+                </button>
+                <button class="nav-link" id="nav-emission-tab" data-bs-toggle="tab" data-bs-target="#nav-emission" type="button" role="tab">
+                    <small class="fw-bold txt--blue">
+                        <i class="fa fa-check"></i>
+                        EMISSIONS
                     </small>
                 </button>
                 <button class="nav-link" id="nav-artiste-tab" data-bs-toggle="tab" data-bs-target="#nav-artiste" type="button" role="tab">
@@ -100,6 +106,15 @@
                             <option value="REDIFFUSION">REDIFFUSION</option>
                         </datalist>
                     </div>
+                    <div class="col-3 text-end">
+                        <button class="btn btn-sm btn-warning me-2 w-25 shadow-sm">
+                            <i class="fa fa-print"></i>
+                        </button>
+                        <button class="btn btn-sm btn-success w-50 shadow-sm">
+                            <i class="fa fa-file-export me-2"></i>
+                            <small>Exporter</small>
+                        </button>
+                    </div>
                     <div class="mt-3">
                         <table class="shadow">
                             <thead>
@@ -125,6 +140,71 @@
                     </div>
                 </div>
             </div>
+            <div class="tab-pane fade p-3 border rounded mt-2 bg-white" id="nav-emission" role="tabpanel">
+                <div class="row">
+                    <div class="col-12 mb-3">
+                        <small class="txt--blue">
+                            <i class="fa fa-filter"></i>
+                            FILTRE
+                        </small>
+                    </div>
+                    <div class="form-group col-3">
+                        <input type="text" class="form-control form-control-sm" placeholder="Recherche par nom de l'émission">
+                    </div>
+                    <div class="form-group col-3">
+                        <input type="text" class="form-control form-control-sm" list="genre" placeholder="-- Choisir un genre --">
+                        <datalist id="genre">
+                            <option value="DIVERTISSEMENT">DIVERTISSEMENT</option>
+                        </datalist>
+                    </div>
+                    <div class="form-group col-3">
+                        <input type="text" class="form-control form-control-sm" list="diffusion" placeholder="-- Choisir une diffusion --">
+                        <datalist id="diffusion">
+                            <option value="REDIFFUSION">REDIFFUSION</option>
+                        </datalist>
+                    </div>
+                    <div class="col-3 text-end">
+                        <button class="btn btn-sm btn-warning me-2 w-25 shadow-sm">
+                            <i class="fa fa-print"></i>
+                        </button>
+                        <button class="btn btn-sm btn-success w-50 shadow-sm">
+                            <i class="fa fa-file-export me-2"></i>
+                            <small>Exporter</small>
+                        </button>
+                    </div>
+                    <div class="mt-3">
+                        <div class="detail mb-2" *ngFor="let n of [].constructor(3)">
+                            <div class="header bg--blue-grey text-white py-1 px-2 d-flex align-items-center">
+                                <i class="plus fa fa-plus me-3" data-bs-toggle="collapse" data-bs-target="#collapseExample" role="button"></i>
+                                <i class="minus fa fa-minus me-3" data-bs-toggle="collapse" data-bs-target="#collapseExample" role="button"></i>
+                                <small>TEMPO | 10:00 - 11:10 | EP: 20 > <a class="txt--green-light"> Direct</a></small>
+                            </div>
+                            <div class="collapse p-3 border--blue-grey" id="collapseExample">
+                                <table class="table table-striped">
+                                    <tr class="bg-light" style="border-bottom: 2px solid rgba(0, 0, 0, 0.772);">
+                                        <th class="px-2 py-1">N°</th>
+                                        <th class="px-2 py-1">HEURE DEBUT</th>
+                                        <th class="px-2 py-1">HEURE FIN</th>
+                                        <th class="px-2 py-1">SOURCE</th>
+                                        <th class="px-2 py-1">RUBRIQUE ARTISTE</th>
+                                        <th class="px-2 py-1" width="500">DETAIL ARTISTE</th>
+                                    </tr>
+                                    <tr class="border-bottom" *ngFor="let n of [].constructor(5)">
+                                        <td class="px-2 py-1">12</td>
+                                        <td class="px-2 py-1">10:00</td>
+                                        <td class="px-2 py-1">12:10</td>
+                                        <td class="px-2 py-1">TV</td>
+                                        <td class="px-2 py-1 txt--orange">TIKEN JAH</td>
+                                        <td class="px-2 py-1" width="500">
+                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui magni itaque ea quasi voluptatem odit?
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div class="tab-pane fade p-3 border rounded mt-2 bg-white" id="nav-artiste" role="tabpanel">
                 <div class="row">
                     <div class="col-12 mb-3">
@@ -141,6 +221,16 @@
                         <datalist id="emission">
                             <option value="PAD">PAD</option>
                         </datalist>
+                    </div>
+                    <div class="col-3"></div>
+                    <div class="col-3 text-end">
+                        <button class="btn btn-sm btn-warning me-2 w-25 shadow-sm">
+                            <i class="fa fa-print"></i>
+                        </button>
+                        <button class="btn btn-sm btn-success w-50 shadow-sm">
+                            <i class="fa fa-file-export me-2"></i>
+                            <small>Exporter</small>
+                        </button>
                     </div>
                     <div class="mt-3">
                         <table class="shadow">

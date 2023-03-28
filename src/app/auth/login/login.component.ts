@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent {
   loading: boolean = false;
-
+  showPwd: boolean = false;
   constructor(
     private router: Router
   ) {}
