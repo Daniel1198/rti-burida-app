@@ -12,36 +12,38 @@
 </div>
 
 <div class="w3-animate-bottom">
-    <div class="p-3 bg-light row">
-        <div class="form-group col-2">
-            <label class="form-label fw-bold"><small>Date de début</small></label>
-            <input type="date" class="form-control-sm form-control">
-        </div>
-        <div class="form-group col-2">
-            <label class="form-label fw-bold"><small>Date de fin</small></label>
-            <input type="date" class="form-control-sm form-control">
-        </div>
-        <div class="form-group col-3">
-            <label class="form-label fw-bold"><small>Support</small></label>
-            <select class="form-select form-select-sm">
-                <option value="">-- Choisir le support --</option>
-            </select>
-        </div>
-        <div class="form-group col-3 border-end">
-            <label class="form-label fw-bold"><small>Période prédéfinie</small></label>
-            <select class="form-select form-select-sm">
-                <option value="">-- Choisir la période --</option>
-            </select>
-        </div>
-        <div class="col-2">
-            <button class="btn btn-sm btn-warning w-100 shadow-sm">
-                <i class="fa fa-print me-2"></i>
-                <small>Tout Imprimer</small>
-            </button>
-            <button class="btn btn-sm btn-success d-block w-100 mt-1 shadow-sm">
-                <i class="fa fa-file-export me-2"></i>
-                <small>Tout Exporter</small>
-            </button>
+    <div class="p-3 bg-light">
+        <div class="row">
+            <div class="form-group col-2">
+                <label class="form-label fw-bold"><small>Date de début</small></label>
+                <input type="date" class="form-control-sm form-control">
+            </div>
+            <div class="form-group col-2">
+                <label class="form-label fw-bold"><small>Date de fin</small></label>
+                <input type="date" class="form-control-sm form-control">
+            </div>
+            <div class="form-group col-3">
+                <label class="form-label fw-bold"><small>Support</small></label>
+                <select class="form-select form-select-sm">
+                    <option value="">-- Choisir le support --</option>
+                </select>
+            </div>
+            <div class="form-group col-3 border-end">
+                <label class="form-label fw-bold"><small>Période prédéfinie</small></label>
+                <select class="form-select form-select-sm">
+                    <option value="">-- Choisir la période --</option>
+                </select>
+            </div>
+            <div class="col-2">
+                <button class="btn btn-sm btn-warning w-100 shadow-sm">
+                    <i class="fa fa-print me-2"></i>
+                    <small>Tout Imprimer</small>
+                </button>
+                <button class="btn btn-sm btn-success d-block w-100 mt-1 shadow-sm">
+                    <i class="fa fa-file-export me-2"></i>
+                    <small>Tout Exporter</small>
+                </button>
+            </div>
         </div>
     </div>
     <div class="p-3 mt-3 bg-light">
@@ -186,17 +188,29 @@
                                         <th class="px-2 py-1">HEURE DEBUT</th>
                                         <th class="px-2 py-1">HEURE FIN</th>
                                         <th class="px-2 py-1">SOURCE</th>
-                                        <th class="px-2 py-1">RUBRIQUE ARTISTE</th>
+                                        <th class="px-2 py-1">RUBRIQUE</th>
+                                        <th class="px-2 py-1">ARTISTE(S)</th>
                                         <th class="px-2 py-1" width="500">DETAIL ARTISTE</th>
                                     </tr>
-                                    <tr class="border-bottom" *ngFor="let n of [].constructor(5)">
-                                        <td class="px-2 py-1">12</td>
+                                    <tr style="border-bottom: 1px solid rgb(72, 94, 112);" *ngFor="let n of [].constructor(5)">
+                                        <td class="px-2 py-1">1</td>
                                         <td class="px-2 py-1">10:00</td>
-                                        <td class="px-2 py-1">12:10</td>
+                                        <td class="px-2 py-1">11:10</td>
                                         <td class="px-2 py-1">TV</td>
-                                        <td class="px-2 py-1 txt--orange">TIKEN JAH</td>
+                                        <td class="px-2 py-1 txt--blue fw-bold">LINER ENTRE MIDI & 2</td>
+                                        <td class="px-2 py-1 txt--orange">
+                                            <div class="row border-start">
+                                                <div class="col-12 mb-1 border-bottom">FALLY IPUPA</div>
+                                                <div class="col-12 mb-1 border-bottom">FALLY IPUPA</div>
+                                                <div class="col-12">FALLY IPUPA</div>
+                                            </div>
+                                        </td>
                                         <td class="px-2 py-1" width="500">
-                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui magni itaque ea quasi voluptatem odit?
+                                            <div class="row">
+                                                <div class="col-12 mb-1 border-bottom">MUSIQUE 7 : Fally Ipupa - Bloqué.wav <span class="txt--green">(bon)</span></div>
+                                                <div class="col-12 mb-1 border-bottom">MUSIQUE 7 : Fally Ipupa - Bloqué.wav <span class="txt--green">(bon)</span></div>
+                                                <div class="col-12">MUSIQUE 7 : Fally Ipupa - Bloqué.wav <span class="txt--green">(bon)</span></div>
+                                            </div>
                                         </td>
                                     </tr>
                                 </table>
